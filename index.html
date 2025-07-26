@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India's Independence Day - 15th August</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Teko:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- ScrollReveal JS for animations -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        /* Custom styles for typography and colors */
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Animated dark background */
+            background: linear-gradient(270deg, #5c3b13, #111827, #0c3c06);
+            background-size: 600% 600%;
+            animation: tricolor-flow 16s ease infinite;
+        }
+
+        @keyframes tricolor-flow {
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+
+        .font-teko {
+            font-family: 'Teko', sans-serif;
+        }
+        .bg-saffron { background-color: #FF9933; }
+        .text-saffron { color: #FF9933; }
+        .bg-green { background-color: #138808; }
+        .text-green { color: #138808; }
+        .bg-navy { background-color: #000080; }
+        .text-navy-light { color: #a7bde3; } /* Lighter navy for dark theme */
+
+        /* Animation for the Ashoka Chakra */
+        .chakra {
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Custom gradient text */
+        .gradient-text {
+            background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        /* Custom styles for the timeline */
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+            padding-left: 2.5rem;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 2px;
+            height: 100%;
+            background-color: #4b5563; /* gray-600 */
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid #111827; /* gray-900 */
+        }
+        
+        /* Dark theme content sections */
+        .content-section {
+            background-color: rgba(17, 24, 39, 0.85); /* gray-900 with opacity */
+            backdrop-filter: blur(8px);
+        }
+        .content-section-gray {
+            background-color: rgba(31, 41, 55, 0.85); /* gray-800 with opacity */
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <!-- Header -->
+    <header class="bg-gray-900/80 shadow-lg fixed w-full z-50 backdrop-blur-md">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="font-teko text-3xl font-bold tracking-wider">
+                <span class="text-saffron">JAI</span> <span class="text-white">HIND</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-gray-300 hover:text-saffron transition duration-300 font-semibold">Home</a>
+                <a href="#history" class="text-gray-300 hover:text-saffron transition duration-300 font-semibold">History</a>
+                <a href="#fighters" class="text-gray-300 hover:text-saffron transition duration-300 font-semibold">Freedom Fighters</a>
+                <a href="#kings" class="text-gray-300 hover:text-saffron transition duration-300 font-semibold">Indian Kings</a>
+                <a href="#flag" class="text-gray-300 hover:text-saffron transition duration-300 font-semibold">The Flag</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-300 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90">
+            <a href="#hero" class="block py-2 px-4 text-sm text-gray-200 hover:bg-gray-700">Home</a>
+            <a href="#history" class="block py-2 px-4 text-sm text-gray-200 hover:bg-gray-700">History</a>
+            <a href="#fighters" class="block py-2 px-4 text-sm text-gray-200 hover:bg-gray-700">Freedom Fighters</a>
+            <a href="#kings" class="block py-2 px-4 text-sm text-gray-200 hover:bg-gray-700">Indian Kings</a>
+            <a href="#flag" class="block py-2 px-4 text-sm text-gray-200 hover:bg-gray-700">The Flag</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center bg-cover bg-center pt-16" style="background-image: url('https://images.unsplash.com/photo-1543637137-398b5038756c?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-8xl font-extrabold text-white font-teko tracking-widest leading-tight hero-title">
+                <span class="text-saffron">79th</span> INDEPENDENCE <span class="text-green">DAY</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mt-4 max-w-3xl mx-auto hero-subtitle">
+                Celebrating the spirit of independence, unity, and progress.
+            </p>
+            <div class="mt-12 hero-chakra">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Ashoka_Chakra.svg/240px-Ashoka_Chakra.svg.png" alt="Ashoka Chakra" class="h-24 w-24 md:h-32 md:w-32 mx-auto chakra">
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="py-20 content-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 section-title">
+                <h2 class="font-teko text-5xl font-bold text-navy-light">A Glimpse into History</h2>
+                <p class="text-lg text-gray-400 mt-2">The long walk to freedom.</p>
+                <div class="w-24 h-1 bg-saffron mx-auto mt-4"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline">
+                    <!-- Timeline Items -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot bg-saffron"></div>
+                        <h3 class="text-xl font-bold text-saffron mb-1">1857: The First War of Independence</h3>
+                        <p class="text-gray-400">Often called the Sepoy Mutiny, this was a major uprising against the rule of the British East India Company, marking a significant turning point in the struggle for freedom.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot bg-navy-light"></div>
+                        <h3 class="text-xl font-bold text-navy-light mb-1">1885: Formation of Indian National Congress</h3>
+                        <p class="text-gray-400">The INC was founded to create a platform for civil and political dialogue among educated Indians, which later became the principal leader of the independence movement.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot bg-green"></div>
+                        <h3 class="text-xl font-bold text-green mb-1">1920: Non-Cooperation Movement</h3>
+                        <p class="text-gray-400">Led by Mahatma Gandhi, this was one of the first mass movements of civil disobedience, urging Indians to withdraw their labor from any activity that sustained the British government.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot bg-saffron"></div>
+                        <h3 class="text-xl font-bold text-saffron mb-1">1930: Dandi March (Salt March)</h3>
+                        <p class="text-gray-400">An act of nonviolent civil disobedience led by Gandhi to protest the British salt tax. This 24-day, 240-mile march triggered a wider civil disobedience movement across India.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot bg-navy-light"></div>
+                        <h3 class="text-xl font-bold text-navy-light mb-1">1942: Quit India Movement</h3>
+                        <p class="text-gray-400">A movement launched by Gandhi demanding an end to British rule in India. It was a call for determined, but passive resistance that signified the boiling point of Indian frustration.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot bg-green"></div>
+                        <h3 class="text-xl font-bold text-green mb-1">1947: Independence & Partition</h3>
+                        <p class="text-gray-400">On August 15, 1947, India achieved independence from British rule. The Indian Independence Act 1947 partitioned British India into the two new independent Dominions of India and Pakistan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Freedom Fighters Section -->
+    <section id="fighters" class="py-20 content-section-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 section-title">
+                <h2 class="font-teko text-5xl font-bold text-navy-light">Architects of Freedom</h2>
+                <p class="text-lg text-gray-400 mt-2">Remembering the heroes who sacrificed everything for our nation.</p>
+                <div class="w-24 h-1 bg-green mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Fighter Cards -->
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/E6D3B3/000000?text=M.+Gandhi" alt="Mahatma Gandhi">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">Mahatma Gandhi</h3>
+                        <p class="text-gray-400 mt-2 text-sm">The father of the nation, who led India to independence through nonviolent civil disobedience.</p>
+                    </div>
+                </div>
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/D4C1A4/000000?text=S.+Patel" alt="Sardar Vallabhbhai Patel">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">Sardar Patel</h3>
+                        <p class="text-gray-400 mt-2 text-sm">The "Iron Man of India," instrumental in integrating the princely states into the Indian union.</p>
+                    </div>
+                </div>
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/C2B095/000000?text=J.+Nehru" alt="Jawaharlal Nehru">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">Jawaharlal Nehru</h3>
+                        <p class="text-gray-400 mt-2 text-sm">The first Prime Minister of India, a central figure in Indian politics before and after independence.</p>
+                    </div>
+                </div>
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/B09F86/000000?text=S.C.+Bose" alt="Subhas Chandra Bose">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">Subhas Chandra Bose</h3>
+                        <p class="text-gray-400 mt-2 text-sm">A prominent nationalist leader who founded the All India Forward Bloc and led the Indian National Army.</p>
+                    </div>
+                </div>
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/9E8E77/000000?text=B.+Singh" alt="Bhagat Singh">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">Bhagat Singh</h3>
+                        <p class="text-gray-400 mt-2 text-sm">A charismatic revolutionary who became a symbol of resistance and inspired thousands of youths.</p>
+                    </div>
+                </div>
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/8C7D68/000000?text=Rani+Lakshmibai" alt="Rani Lakshmibai">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">Rani Lakshmibai</h3>
+                        <p class="text-gray-400 mt-2 text-sm">The Queen of Jhansi, one of the leading figures of the 1857 rebellion and a symbol of bravery.</p>
+                    </div>
+                </div>
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/7A6C59/000000?text=B.R.+Ambedkar" alt="B.R. Ambedkar">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">B.R. Ambedkar</h3>
+                        <p class="text-gray-400 mt-2 text-sm">Architect of the Indian Constitution, a jurist, economist, and social reformer.</p>
+                    </div>
+                </div>
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/685B4A/000000?text=Sarojini+Naidu" alt="Sarojini Naidu">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">Sarojini Naidu</h3>
+                        <p class="text-gray-400 mt-2 text-sm">The "Nightingale of India," a distinguished poet, and the first Indian woman to be president of the INC.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indian Kings Section -->
+    <section id="kings" class="py-20 content-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 section-title">
+                <h2 class="font-teko text-5xl font-bold text-navy-light">Legendary Indian Kings</h2>
+                <p class="text-lg text-gray-400 mt-2">Icons of sovereignty and courage.</p>
+                <div class="w-24 h-1 bg-saffron mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+                <!-- King Card -->
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/A5673F/FFFFFF?text=Shivaji+Maharaj" alt="Chhatrapati Shivaji Maharaj">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">Chhatrapati Shivaji Maharaj</h3>
+                        <p class="text-gray-400 mt-2 text-sm">A visionary king and the founder of the Maratha Empire. Revered for his guerrilla warfare tactics, administrative skills, and for championing 'Hindavi Swarajya' (Self-Rule of Hindu people).</p>
+                    </div>
+                </div>
+                <!-- King Card -->
+                <div class="fighter-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img class="w-full h-56 object-cover object-center" src="https://placehold.co/400x300/5A3A22/FFFFFF?text=Maharana+Pratap" alt="Maharana Pratap">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy-light font-teko">Maharana Pratap</h3>
+                        <p class="text-gray-400 mt-2 text-sm">The valiant Rajput king of Mewar, known for his indomitable spirit and resistance against the Mughal expansion. His name is synonymous with courage, sacrifice, and the fight for honor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flag Section -->
+    <section id="flag" class="py-20 content-section-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 section-title">
+                <h2 class="font-teko text-5xl font-bold text-navy-light">The Tricolour: Our Pride</h2>
+                <p class="text-lg text-gray-400 mt-2">Symbolism of the Tiranga.</p>
+                <div class="w-24 h-1 bg-saffron mx-auto mt-4"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 flag-image">
+                    <div class="w-full h-64 flex flex-col shadow-xl rounded-lg overflow-hidden">
+                        <div class="h-1/3 bg-saffron"></div>
+                        <div class="h-1/3 bg-white flex justify-center items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Ashoka_Chakra.svg/240px-Ashoka_Chakra.svg.png" alt="Ashoka Chakra" class="h-16 w-16 chakra">
+                        </div>
+                        <div class="h-1/3 bg-green"></div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 space-y-6 flag-text">
+                    <div class="flex items-start">
+                        <div class="w-4 h-4 rounded-full bg-saffron mt-1.5 mr-4 flex-shrink-0"></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-saffron">Saffron (Kesari)</h3>
+                            <p class="text-gray-400">Represents strength and courage of the country.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-4 h-4 rounded-full bg-gray-200 mt-1.5 mr-4 flex-shrink-0"></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-200">White</h3>
+                            <p class="text-gray-400">Indicates peace and truth with Dharma Chakra in the middle.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-4 h-4 rounded-full bg-green mt-1.5 mr-4 flex-shrink-0"></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-green">Green</h3>
+                            <p class="text-gray-400">Shows the fertility, growth, and auspiciousness of the land.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start">
+                        <div class="w-4 h-4 rounded-full bg-blue-400 mt-1.5 mr-4 flex-shrink-0"></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-400">The Ashoka Chakra</h3>
+                            <p class="text-gray-400">The 24-spoke wheel in the center represents the eternal wheel of law and righteousness.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/90 text-white backdrop-blur-md">
+        <div class="container mx-auto py-10 px-6 text-center">
+            <p class="font-teko text-4xl gradient-text font-bold">Vande Mataram</p>
+            <p class="mt-4 text-gray-400">This website is a tribute to the countless souls who fought for the freedom we cherish today.</p>
+            <p class="text-sm text-gray-500 mt-6">&copy; 2025 - Happy Independence Day, India!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a, nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if(mobileMenu.classList.contains('hidden') === false){
+                     mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Initialize ScrollReveal
+        const sr = ScrollReveal({
+            distance: '60px',
+            duration: 2500,
+            delay: 400,
+            reset: false, // Animations will only happen once
+        });
+
+        // Hero Section Animations
+        sr.reveal('.hero-title', { delay: 200, origin: 'top' });
+        sr.reveal('.hero-subtitle', { delay: 400, origin: 'bottom' });
+        sr.reveal('.hero-chakra', { delay: 600, origin: 'bottom', scale: 0.5 });
+
+        // General Section Title Animations
+        sr.reveal('.section-title', { delay: 200, origin: 'left' });
+
+        // History Timeline Animations
+        sr.reveal('.timeline-item', { interval: 200, origin: 'right' });
+        
+        // Freedom Fighter & King Card Animations
+        sr.reveal('.fighter-card', { interval: 150, origin: 'bottom' });
+
+        // Flag Section Animations
+        sr.reveal('.flag-image', { delay: 200, origin: 'left', scale: 0.8 });
+        sr.reveal('.flag-text > div', { interval: 200, origin: 'right' });
+
+    </script>
+</body>
+</html>
